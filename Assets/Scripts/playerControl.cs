@@ -16,6 +16,7 @@ public class playerControl : MonoBehaviour
     public bool isArmed;
     Vector3 playerToMouse;
     PlayerHealth playerHealth;
+    public bool hasBullets;
     void Awake()
     {
         
@@ -24,7 +25,7 @@ public class playerControl : MonoBehaviour
         direcaoMovimento = playerCamera.transform.forward;
         direcaoMovimento.y = 0f;
         playerHealth = GetComponent<PlayerHealth>();
-        
+        hasBullets = false;
         
     }
 

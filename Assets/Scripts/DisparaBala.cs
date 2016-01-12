@@ -16,19 +16,20 @@ public class DisparaBala : MonoBehaviour {
     Light shootLuz;
 
     public GameObject player;
+    playerControl playerControl;
 
 	void Awake () 
     {
         shootLine = GetComponent<LineRenderer>();
         shootLuz = GetComponent<Light>();
-        
+        playerControl = player.GetComponent<playerControl>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
         timer += Time.deltaTime;
-        if(Input.GetButton("Fire1") && timer >= timeBetwwenBullets)
+        if(Input.GetButton("Fire1") && timer >= timeBetwwenBullets && playerControl.hasBullets)
         {
             shoot();
         }
