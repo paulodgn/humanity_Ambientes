@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyPatrolAndFollow : MonoBehaviour {
 
     GameObject player;
+    PlayerHealth playerHealth;
     public Transform[] patrolPoints;
     int patrolPointID;
     NavMeshAgent enemyAgent;
@@ -17,6 +18,7 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
     {
         patrolPointID = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         enemyAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         nextPatrolSpot();
@@ -67,6 +69,24 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
 
     void goToPlayer()
     {
-        enemyAgent.destination = player.transform.position;
+        if (playerHealth.playerHealth > 0)
+        {
+            enemyAgent.destination = player.transform.position;
+        }
+        else
+        {
+            droneAlarm.alarm = false;
+            patrolPointID = 0;
+            nextPatrolSpot();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject==player && playerHealth.playerHealth>0)
+        {
+            droneAlarm.alarm = true;
+            
+        }
     }
 }
