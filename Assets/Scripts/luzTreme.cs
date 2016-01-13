@@ -21,7 +21,7 @@ public class luzTreme : MonoBehaviour {
 	void Update () 
     {
         timer += Time.time;
-        Debug.Log(timer);
+        
         if(timer >= timeBetweenTremer)
         {
             numTremidelas = 2;

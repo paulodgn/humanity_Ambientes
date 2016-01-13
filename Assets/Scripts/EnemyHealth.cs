@@ -28,13 +28,13 @@ public class EnemyHealth : MonoBehaviour {
             Debug.Log(enemyHealth);
         }
         //se health chegar a zero morre
-        else if (enemyHealth <= 0)
+        if (enemyHealth == 0)
         {
             
             Animation animation = GetComponent<Animation>();
             animation.wrapMode = WrapMode.ClampForever;
             
-            anim.SetBool("Walk", false);
+            //anim.SetBool("Walk", false);
             anim.enabled = false;
             animation.Play();
             Debug.Log("enemy morreu");
