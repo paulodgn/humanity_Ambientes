@@ -30,9 +30,12 @@ public class EnemyHealth : MonoBehaviour {
         //se health chegar a zero morre
         else if (enemyHealth <= 0)
         {
-            anim.enabled = false;
+            
             Animation animation = GetComponent<Animation>();
             animation.wrapMode = WrapMode.ClampForever;
+            
+            anim.SetBool("Walk", false);
+            anim.enabled = false;
             animation.Play();
             Debug.Log("enemy morreu");
         }
