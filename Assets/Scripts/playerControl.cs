@@ -17,6 +17,7 @@ public class playerControl : MonoBehaviour
     Vector3 playerToMouse;
     PlayerHealth playerHealth;
     public bool hasBullets;
+    public bool hasKey;
     void Awake()
     {
         
@@ -26,7 +27,7 @@ public class playerControl : MonoBehaviour
         direcaoMovimento.y = 0f;
         playerHealth = GetComponent<PlayerHealth>();
         hasBullets = false;
-        
+        hasKey = false;
     }
 
     void Start()

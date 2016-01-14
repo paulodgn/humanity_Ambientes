@@ -22,7 +22,7 @@ public class luzTreme : MonoBehaviour {
 	void FixedUpdate () 
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+        
         if(timer >= timeBetweenTremer)
         {
             numTremidelas = 4;

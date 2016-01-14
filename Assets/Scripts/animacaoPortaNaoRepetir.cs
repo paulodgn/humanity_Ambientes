@@ -7,11 +7,13 @@ public class animacaoPortaNaoRepetir : MonoBehaviour {
     Animator animator;
     float timer=0;
     GameObject player;
+    playerControl playerControl;
     prisionerEscape escape;
 	// Use this for initialization
 	void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<playerControl>();
         escape = GameObject.FindGameObjectWithTag("prisioner").GetComponent<prisionerEscape>();
 	}
 	
@@ -25,7 +27,7 @@ public class animacaoPortaNaoRepetir : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == player && Input.GetKeyDown(KeyCode.F))
+        if (other.gameObject == player && Input.GetKeyDown(KeyCode.F) && playerControl.hasKey)
         {
             
                 anim = GetComponent<Animation>();
