@@ -3,32 +3,33 @@ using System.Collections;
 
 public class luzTreme : MonoBehaviour {
 
-    public float tempoTremerMin=0.8f;
-    public float tempoTremerMax = 2.2f;
-    float timeBetweenTremer = 800;
+     float tempoTremerMin=0.05f;
+     float tempoTremerMax = 0.15f;
+    float timeBetweenTremer = 6f;
     float timer=0;
     int numTremidelas = 3;
     Light luz;
-    
+    bool active;
+    int count;
 	// Use this for initialization
 	void Awake () {
 
         luz = GetComponent<Light>();
-        
+        active = false;
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
     {
-        timer += Time.time;
-        
+        timer += Time.deltaTime;
+        Debug.Log(timer);
         if(timer >= timeBetweenTremer)
         {
-            numTremidelas = 2;
+            numTremidelas = 4;
             StartCoroutine(Treme());
             
         }
-                
+              
 	}
 
     IEnumerator Treme()
@@ -42,8 +43,8 @@ public class luzTreme : MonoBehaviour {
             luz.enabled = true;
             numTremidelas--;
         }
+        Debug.Log(count++);
         timer = 0;
-        
         
         
     }
