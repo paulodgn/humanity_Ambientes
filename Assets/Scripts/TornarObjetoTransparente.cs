@@ -7,10 +7,10 @@ public class TornarObjetoTransparente : MonoBehaviour {
     Vector3 playerPosition;
     Vector3 direcao;
     public GameObject player;
-    float rayDistance=100f;
+    float rayDistance=200f;
     Color color;
     Color colorOriginal;
-    
+    Ray shootRay;
 	void Start () 
     {
         playerPosition = player.transform.position;
@@ -22,7 +22,7 @@ public class TornarObjetoTransparente : MonoBehaviour {
 	void FixedUpdate () 
     {
         playerPosition = player.transform.position;
-        direcao = transform.position + playerPosition;
+        direcao = transform.position - playerPosition;
 
         CamaraRay();
 	}
@@ -30,10 +30,16 @@ public class TornarObjetoTransparente : MonoBehaviour {
     void CamaraRay()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Ray camaraRay = Camera.main.ScreenPointToRay(Vector3.forward);
+        Ray camaraRay = Camera.main.ScreenPointToRay(forward);
+        //novo
+        shootRay.origin = Camera.main.transform.position;
+        shootRay.direction = -direcao;
+
         RaycastHit rayHit;
-        if(Physics.Raycast(camaraRay, out rayHit, rayDistance))
+        if(Physics.Raycast(shootRay, out rayHit, rayDistance))
         {
+            
+            Debug.DrawRay(Camera.main.transform.position, -direcao, Color.green);
             if (rayHit.transform.tag == "hideObject")
             {
                 Debug.Log("hit");
