@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class playerGetsKey : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class playerGetsKey : MonoBehaviour {
     EnemyHealth enemy;
     Collider colliderChave;
     bool enemyKilled;
+    public Text textGetKey;
 	// Use this for initialization
 	void Awake () 
     {
@@ -40,7 +42,7 @@ public class playerGetsKey : MonoBehaviour {
             
             playerControl.hasKey = true;
             chave.enabled = false;
-            Debug.Log("colidiu com chave");
+            textGetKey.color = Color.green;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class playerGetBullets : MonoBehaviour 
 {
@@ -7,6 +8,7 @@ public class playerGetBullets : MonoBehaviour
     GameObject player;
     playerControl playerControl;
     MeshRenderer bala;
+    public Text textGetBullet;
 
 	// Use this for initialization
 	void Awake () 
@@ -27,6 +29,7 @@ public class playerGetBullets : MonoBehaviour
         {
             playerControl.hasBullets = true;
             bala.enabled = false;
+            textGetBullet.color = Color.green;
         }
     }
        

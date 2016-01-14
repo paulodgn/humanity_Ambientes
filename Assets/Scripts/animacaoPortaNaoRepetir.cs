@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class animacaoPortaNaoRepetir : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class animacaoPortaNaoRepetir : MonoBehaviour {
     GameObject player;
     playerControl playerControl;
     prisionerEscape escape;
+    public Text textSavePrisioner;
 	// Use this for initialization
 	void Start () 
     {
@@ -36,7 +38,7 @@ public class animacaoPortaNaoRepetir : MonoBehaviour {
                 escape.startEscape = true;
                 escape.free = true;
                 escape.anim.SetBool("Run", true);
-                
+                textSavePrisioner.color = Color.green;
            
         }
     }
