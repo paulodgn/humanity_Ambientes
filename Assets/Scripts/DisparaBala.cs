@@ -29,7 +29,7 @@ public class DisparaBala : MonoBehaviour {
 	void Update () 
     {
         timer += Time.deltaTime;
-        if(Input.GetButton("Fire1") && timer >= timeBetwwenBullets && playerControl.hasBullets)
+        if(Input.GetButton("Fire1") && timer >= timeBetwwenBullets && playerControl.hasBullets && playerControl.isArmed)
         {
             shoot();
         }
