@@ -16,6 +16,7 @@ public class DronePatrol : MonoBehaviour {
 	
 	void Update () 
     {
+        //se a distancia para o ponto de patrulha for inferior a 0.5, passa para o proximo.
 	    if(droneAgent.remainingDistance < 0.5f)
         {
             nextPatrolSpot();
@@ -33,7 +34,7 @@ public class DronePatrol : MonoBehaviour {
         {
             patrolPointID = 0;
         }
-
+        //define o destino do agent.
         droneAgent.destination = patrolPoints[patrolPointID].position;
     }
 
