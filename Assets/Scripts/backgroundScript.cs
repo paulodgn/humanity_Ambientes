@@ -31,5 +31,10 @@ public class backgroundScript : MonoBehaviour {
         {
             newGame.gameObject.SetActive(true);
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 }

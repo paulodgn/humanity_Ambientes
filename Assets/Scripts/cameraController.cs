@@ -30,6 +30,11 @@ public class cameraController : MonoBehaviour
             offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speed, Vector3.up) * offset;
         }
 
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.LoadLevel("GameMenu");
+        }
+
     }
 
 
