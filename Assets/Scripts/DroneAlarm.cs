@@ -29,15 +29,7 @@ public class DroneAlarm : MonoBehaviour
         }
     }
 
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if(other.gameObject == player)
-    //    {
-    //        alarm = false;
-    //        AlarmOff();
-    //    }
-    //}
-
+  
     void AlarmOn()
     {
         luzDrone.color = Color.red;
