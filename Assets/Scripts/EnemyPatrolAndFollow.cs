@@ -9,9 +9,7 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
     int patrolPointID;
     NavMeshAgent enemyAgent;
     DroneAlarm droneAlarm;
-
     Transform PlayerPosition;
-
     Animator anim;
     EnemyHealth enemyHealth;
 	void Start () 
@@ -66,7 +64,7 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
 
         enemyAgent.destination = patrolPoints[patrolPointID].position;
     }
-
+    //vai se encontro ao jogador
     void goToPlayer()
     {
         if (playerHealth.playerHealth > 0)
@@ -80,7 +78,7 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
             nextPatrolSpot();
         }
     }
-
+    //se encontrar o jogador
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject==player && playerHealth.playerHealth>0)
