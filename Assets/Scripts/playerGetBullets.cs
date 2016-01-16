@@ -29,7 +29,7 @@ public class playerGetBullets : MonoBehaviour
     {
         if(other.gameObject==player)
         {
-            som.Play();
+            if (!playerControl.hasBullets) som.Play();
             playerControl.hasBullets = true;
             bala.enabled = false;
             textGetBullet.color = Color.green;

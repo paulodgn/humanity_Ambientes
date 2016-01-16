@@ -41,7 +41,7 @@ public class playerGetsKey : MonoBehaviour {
     {
         if(other.gameObject==player)
         {
-            som.Play();
+            if(!playerControl.hasKey) som.Play();
             playerControl.hasKey = true;
             chave.enabled = false;
             textGetKey.color = Color.green;
