@@ -11,6 +11,7 @@ public class playerGetsKey : MonoBehaviour {
     Collider colliderChave;
     bool enemyKilled;
     public Text textGetKey;
+    AudioSource audio;
 	// Use this for initialization
 	void Awake () 
     {
@@ -19,6 +20,7 @@ public class playerGetsKey : MonoBehaviour {
         chave = GetComponent<MeshRenderer>();
         enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<EnemyHealth>();
         colliderChave = gameObject.GetComponent<Collider>();
+        audio = gameObject.GetComponent<AudioSource>();
         colliderChave.enabled = false;
         chave.enabled = false;
         enemyKilled = false;
@@ -39,7 +41,7 @@ public class playerGetsKey : MonoBehaviour {
     {
         if(other.gameObject==player)
         {
-            
+            audio.Play();
             playerControl.hasKey = true;
             chave.enabled = false;
             textGetKey.color = Color.green;

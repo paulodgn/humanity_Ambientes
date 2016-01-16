@@ -7,7 +7,6 @@ public class backgroundScript : MonoBehaviour {
     private Image background;
     private Text title;
     private Button newGame;
-    int contador;
 
     void Awake()
     {
@@ -17,7 +16,6 @@ public class backgroundScript : MonoBehaviour {
         title.canvasRenderer.SetAlpha(0.0f);
         newGame = GetComponentInChildren<Button>();
         newGame.gameObject.SetActive(false);
-        contador = 0;
     }
 
 	// Use this for initialization
