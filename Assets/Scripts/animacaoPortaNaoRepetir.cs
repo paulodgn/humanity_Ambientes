@@ -6,7 +6,6 @@ public class animacaoPortaNaoRepetir : MonoBehaviour {
 
     Animation anim;
     Animator animator;
-    float timer=0;
     GameObject player;
     playerControl playerControl;
     prisionerEscape escape;

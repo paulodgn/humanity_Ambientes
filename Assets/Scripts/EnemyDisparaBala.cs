@@ -16,7 +16,6 @@ public class EnemyDisparaBala : MonoBehaviour
     LineRenderer shootLine;
     Light shootLuz;
 
-    GameObject player;
     Rigidbody enemy;
     NavMeshAgent enemyAgent;
     DroneAlarm droneAlarm;
@@ -25,7 +24,6 @@ public class EnemyDisparaBala : MonoBehaviour
     {
         shootLine = GetComponent<LineRenderer>();
         shootLuz = GetComponent<Light>();
-        player = GameObject.FindGameObjectWithTag("Player");
         enemy = gameObject.GetComponentInParent<Rigidbody>();
         enemyAgent = gameObject.GetComponentInParent<NavMeshAgent>();
         droneAlarm = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneAlarm>();

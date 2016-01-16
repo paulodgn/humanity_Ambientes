@@ -9,13 +9,10 @@ public class luzTreme : MonoBehaviour {
     float timer=0;
     int numTremidelas = 3;
     Light luz;
-    bool active;
     int count;
 	// Use this for initialization
 	void Awake () {
-
         luz = GetComponent<Light>();
-        active = false;
 	}
 	
 	// Update is called once per frame

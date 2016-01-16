@@ -29,8 +29,6 @@ public class TornarObjetoTransparente : MonoBehaviour {
 
     void CamaraRay()
     {
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Ray camaraRay = Camera.main.ScreenPointToRay(forward);
         //novo
         shootRay.origin = Camera.main.transform.position;
         shootRay.direction = -direcao;

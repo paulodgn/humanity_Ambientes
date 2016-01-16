@@ -4,14 +4,12 @@ using System.Collections;
 public class lanternaControl : MonoBehaviour {
 
     public Light lanterna;
-    bool acender;
     playerControl player;
 	// Use this for initialization
 	void Start () 
     {
         player = GetComponentInParent<playerControl>();
         lanterna.enabled = false;
-        acender = false;
 	}
 	
 	// Update is called once per frame
