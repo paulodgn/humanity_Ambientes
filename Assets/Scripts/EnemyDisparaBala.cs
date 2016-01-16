@@ -19,6 +19,7 @@ public class EnemyDisparaBala : MonoBehaviour
     Rigidbody enemy;
     NavMeshAgent enemyAgent;
     DroneAlarm droneAlarm;
+    AudioSource somDisparo; 
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class EnemyDisparaBala : MonoBehaviour
         enemy = gameObject.GetComponentInParent<Rigidbody>();
         enemyAgent = gameObject.GetComponentInParent<NavMeshAgent>();
         droneAlarm = GameObject.FindGameObjectWithTag("Drone").GetComponent<DroneAlarm>();
+        somDisparo = GameObject.FindGameObjectWithTag("enemy").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class EnemyDisparaBala : MonoBehaviour
 
     void shoot()
     {
+        somDisparo.Play();
         timer = 0f;
         shootLine.enabled = true;
         shootLuz.enabled = true;

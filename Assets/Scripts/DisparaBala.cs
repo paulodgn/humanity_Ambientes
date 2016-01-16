@@ -6,6 +6,7 @@ public class DisparaBala : MonoBehaviour {
     public int damage;
     public float timeBetwwenBullets;
     public float range;
+    AudioSource somDisparo;
 
     float displayTime = 0.02f;
     float timer;
@@ -23,6 +24,7 @@ public class DisparaBala : MonoBehaviour {
         shootLine = GetComponent<LineRenderer>();
         shootLuz = GetComponent<Light>();
         playerControl = player.GetComponent<playerControl>();
+        somDisparo = player.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +45,7 @@ public class DisparaBala : MonoBehaviour {
 
     void shoot()
     {
+        somDisparo.Play();
         timer = 0f;
         shootLine.enabled = true;
         shootLuz.enabled = true;
