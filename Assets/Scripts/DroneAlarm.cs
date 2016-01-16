@@ -7,11 +7,13 @@ public class DroneAlarm : MonoBehaviour
     GameObject player;
     Light luzDrone;
     public bool alarm;
+    AudioSource[] sounds;
 	
 	void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         luzDrone = gameObject.GetComponentInChildren<Light>();
+        sounds = gameObject.GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class DroneAlarm : MonoBehaviour
     {
         if(other.gameObject == player)
         {
+            sounds[1].Play();
             alarm = true;
             AlarmOn();
         }

@@ -9,14 +9,14 @@ public class playerGetBullets : MonoBehaviour
     playerControl playerControl;
     MeshRenderer bala;
     public Text textGetBullet;
-    AudioSource audio;
+    AudioSource som;
 
 	// Use this for initialization
 	void Awake () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerControl = player.GetComponent<playerControl>();
-        audio = gameObject.GetComponent<AudioSource>();
+        som = gameObject.GetComponent<AudioSource>();
         bala = gameObject.GetComponent<MeshRenderer>();
 	}
 	
@@ -29,7 +29,7 @@ public class playerGetBullets : MonoBehaviour
     {
         if(other.gameObject==player)
         {
-            audio.Play();
+            som.Play();
             playerControl.hasBullets = true;
             bala.enabled = false;
             textGetBullet.color = Color.green;
