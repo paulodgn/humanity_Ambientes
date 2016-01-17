@@ -7,9 +7,10 @@ public class PlayerHealth : MonoBehaviour
 
     public int playerHealth;
     public Slider healthSlider;
+    public bool vivo;
 	// Use this for initialization
 	void Start () {
-	
+        vivo = true;
 	}
 	
 	// Update is called once per frame

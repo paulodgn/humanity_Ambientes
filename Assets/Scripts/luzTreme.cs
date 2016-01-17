@@ -40,7 +40,6 @@ public class luzTreme : MonoBehaviour {
             luz.enabled = true;
             numTremidelas--;
         }
-        Debug.Log(count++);
         timer = 0;
         
         

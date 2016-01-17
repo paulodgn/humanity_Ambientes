@@ -24,7 +24,7 @@ public class DisparaBala : MonoBehaviour {
         shootLine = GetComponent<LineRenderer>();
         shootLuz = GetComponent<Light>();
         playerControl = player.GetComponent<playerControl>();
-        somDisparo = player.GetComponent<AudioSource>();
+        somDisparo = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
