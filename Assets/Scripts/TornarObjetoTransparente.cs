@@ -40,7 +40,6 @@ public class TornarObjetoTransparente : MonoBehaviour {
             Debug.DrawRay(Camera.main.transform.position, -direcao, Color.green);
             if (rayHit.transform.tag == "hideObject")
             {
-                Debug.Log("hit");
                 GameObject edificio = rayHit.collider.gameObject;
                 //color = edificio.GetComponent<Renderer>().material.color;
                 //color.a = 0.2f;

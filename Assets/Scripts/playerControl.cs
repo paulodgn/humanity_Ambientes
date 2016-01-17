@@ -18,6 +18,7 @@ public class playerControl : MonoBehaviour
     PlayerHealth playerHealth;
     public bool hasBullets;
     public bool hasKey;
+    AudioSource die;
     void Awake()
     {
         
@@ -28,6 +29,7 @@ public class playerControl : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         hasBullets = false;
         hasKey = false;
+        die = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -40,8 +42,9 @@ public class playerControl : MonoBehaviour
     {
 
         //se health menor ou igual a zero morre
-        if (playerHealth.playerHealth <= 0)
+        if (playerHealth.vivo && playerHealth.playerHealth <= 0)
         {
+            die.Play();
             anim.SetBool("PistolWalk", false);
             anim.SetBool("Run", false);
             anim.SetBool("Idle", false);
@@ -53,6 +56,7 @@ public class playerControl : MonoBehaviour
             animation.wrapMode = WrapMode.ClampForever;
             animation.Play();
             //anim.SetBool("Death", true);
+            playerHealth.vivo = false;
             
         }
        

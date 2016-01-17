@@ -12,6 +12,8 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
     Transform PlayerPosition;
     Animator anim;
     EnemyHealth enemyHealth;
+    public AudioSource die;
+    public AudioSource shoot;
 	void Start () 
     {
         patrolPointID = 0;
@@ -29,8 +31,9 @@ public class EnemyPatrolAndFollow : MonoBehaviour {
 	void Update () 
     {
         //se inimigo esta morto desativa navAgent
-        if(enemyHealth.enemyHealth <= 0)
+        if (enemyAgent.enabled && enemyHealth.enemyHealth <= 0)
         {
+            die.Play();
             enemyAgent.enabled = false;
             
         }
