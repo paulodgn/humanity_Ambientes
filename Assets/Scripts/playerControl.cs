@@ -38,7 +38,7 @@ public class playerControl : MonoBehaviour
         isArmed = false;
     }
 
-    void FixedUpdate()
+    void Update()
     {
 
         //se health menor ou igual a zero morre
@@ -72,6 +72,7 @@ public class playerControl : MonoBehaviour
             //ativa e desativa a arma
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 isArmed = !isArmed;
 
             }
