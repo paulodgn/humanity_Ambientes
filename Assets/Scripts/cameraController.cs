@@ -12,7 +12,7 @@ public class cameraController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = 5f;
-        offset = new Vector3(0,10,14);
+        offset = new Vector3(0, 2, 1f);
 
 
     }
@@ -23,7 +23,7 @@ public class cameraController : MonoBehaviour
 
         
         transform.position = player.position + offset;
-        transform.LookAt(player);
+        transform.LookAt(player.position + new Vector3(0, 1.5f, 0));
 
         if (Input.GetMouseButton(1))
         {
